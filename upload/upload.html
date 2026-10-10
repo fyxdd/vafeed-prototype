@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit News — VAFeed</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0d0d'/%3E%3Ctext x='32' y='45' font-family='Inter, Arial, sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' letter-spacing='-1.5'%3EVAF%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="u_style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">VA</span>
+        <span class="logo-text">Feed</span>
+      </a>
+
+      <div class="header-right">
+        <nav class="nav">
+          <a href="../index.html">Latest</a>
+          <a href="upload.html" class="active">Upload News</a>
+          <a href="../index.html#about">About</a>
+        </nav>
+
+        <!-- ===== ACCOUNT MENU (hidden by default) ===== -->
+        <div id="account-menu" class="account-menu" hidden>
+          <button type="button" id="account-btn" class="account-btn" aria-label="Account menu" aria-haspopup="true" aria-expanded="false">
+            <img id="account-avatar" alt="" />
+          </button>
+
+          <div id="account-dropdown" class="account-dropdown" hidden>
+            <div class="account-dropdown-head">
+              <img id="dropdown-avatar" alt="" class="account-dropdown-avatar" />
+              <div class="account-dropdown-text">
+                <strong id="dropdown-name"></strong>
+                <small id="dropdown-username"></small>
+              </div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <button type="button" id="account-signout" class="account-signout">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                <polyline points="16 17 21 12 16 7"/>
+                <line x1="21" y1="12" x2="9" y2="12"/>
+              </svg>
+              <span>Sign out</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero-compact">
+    <div class="container">
+      <p class="hero-kicker">Contribute</p>
+      <h1 class="hero-title">Submit your<br />virtual airline news.</h1>
+      <p class="hero-sub">
+        Share route launches, fleet additions, events, or announcements from your virtual airline.
+        All submissions are reviewed before publishing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== LOGIN GATE ===== -->
+  <section id="login-gate" class="container login-gate">
+    <div class="login-gate-box">
+      <div class="login-gate-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.332-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.332-.946 2.418-2.157 2.418z"/>
+        </svg>
+      </div>
+      <h2>Login required</h2>
+      <p>You must sign in with Discord to submit news to VAFeed.</p>
+      <button type="button" id="discord-login-btn" class="discord-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.332-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.332-.946 2.418-2.157 2.418z"/>
+        </svg>
+        <span>Login with Discord</span>
+      </button>
+      <p id="discord-error" class="official-auth-error" hidden></p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="container submit-wrap" id="submit-wrap">
+    <form id="submit-form" class="submit-form" novalidate>
+
+      <!-- Row: Title -->
+      <div class="form-row">
+        <label for="title">Title <span class="req">*</span></label>
+        <input type="text" id="title" name="title" maxlength="120" required
+               placeholder="e.g. Garuda Virtual launches Jakarta–Tokyo route" />
+        <small class="hint">Short, clear title. Max 120 characters.</small>
+      </div>
+
+      <!-- Row: Category + Airline -->
+      <div class="form-grid-2">
+        <div class="form-row">
+          <label id="category-label">Category <span class="req">*</span></label>
+
+          <!-- ===== CUSTOM DROPDOWN ===== -->
+          <div class="cselect" id="category-cselect">
+            <input type="hidden" id="category" name="category" required />
+
+            <button type="button" class="cselect-trigger" id="category-trigger"
+                    aria-haspopup="listbox" aria-expanded="false">
+              <span class="cselect-value" id="category-value" data-placeholder="Select a category…">
+                Select a category…
+              </span>
+              <svg class="cselect-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                <path fill="currentColor" d="M6 8L1 3h10z"/>
+              </svg>
+            </button>
+
+            <ul class="cselect-menu" id="category-menu" role="listbox" hidden>
+              <!-- options are rendered by JS -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="airline">Virtual Airline <span class="req">*</span></label>
+          <input type="text" id="airline" name="airline" maxlength="80" required
+                 placeholder="e.g. BrasilConnect Virtual" />
+        </div>
+      </div>
+
+      <!-- ===== ADMIN-ONLY SECTION (hidden by default) ===== -->
+      <div class="form-row admin-section" id="admin-section" hidden>
+        <div class="admin-section-head">
+          <div class="admin-section-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Admin Options</span>
+          </div>
+          <span class="admin-badge">ADMIN</span>
+        </div>
+
+        <div class="admin-section-body">
+          <!-- Admin-only category -->
+          <div class="form-row">
+            <label id="admin-category-label">Admin Category</label>
+            <div class="cselect" id="admin-category-cselect">
+              <input type="hidden" id="admin-category" />
+              <button type="button" class="cselect-trigger" id="admin-category-trigger"
+                      aria-haspopup="listbox" aria-expanded="false">
+                <span class="cselect-value" id="admin-category-value" data-placeholder="Select admin category (optional)…">
+                  Select admin category (optional)…
+                </span>
+                <svg class="cselect-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                  <path fill="currentColor" d="M6 8L1 3h10z"/>
+                </svg>
+              </button>
+              <ul class="cselect-menu" id="admin-category-menu" role="listbox" hidden></ul>
+            </div>
+            <small class="hint">Only admins can choose these categories.</small>
+          </div>
+
+          <!-- Official toggle -->
+          <div class="form-row">
+            <label class="switch-label" for="isOfficial">
+              <span class="switch">
+                <input type="checkbox" id="isOfficial" name="isOfficial" />
+                <span class="switch-track">
+                  <span class="switch-dot"></span>
+                </span>
+              </span>
+              <span class="switch-text">
+                <strong>Post as VAFeed Official</strong>
+                <small>Publish under the official VAFeed account</small>
+              </span>
+            </label>
+            <small class="hint" id="official-hint" hidden>
+              ⚠️ This post will be marked as <strong>OFFICIAL</strong> and published under the VAFeed name.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row: Image Upload -->
+      <div class="form-row">
+        <label for="imageFile">Cover Image</label>
+        <div class="upload-zone" id="upload-zone">
+          <input type="file" id="imageFile" name="imageFile" accept="image/*" hidden />
+          <div class="upload-placeholder" id="upload-placeholder">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span class="upload-text">Click or drop image here</span>
+            <span class="upload-sub">JPG, PNG, WebP — max 5MB</span>
+          </div>
+          <div class="upload-preview" id="upload-preview" hidden>
+            <img id="preview-img" alt="Preview" />
+            <button type="button" class="upload-remove" id="upload-remove" aria-label="Remove image">×</button>
+          </div>
+        </div>
+        <small class="hint">Optional. Leave empty if no image.</small>
+      </div>
+
+      <!-- Row: Summary -->
+      <div class="form-row">
+        <label for="summary">Summary <span class="req">*</span></label>
+        <textarea id="summary" name="summary" rows="3" maxlength="280" required
+                  placeholder="One or two sentences that describe the news."></textarea>
+        <small class="hint">Max 280 characters. <span id="summary-count">0</span>/280</small>
+      </div>
+
+      <!-- Row: Content -->
+      <div class="form-row">
+        <label for="content">Full Content <span class="req">*</span></label>
+        <textarea id="content" name="content" rows="10" required
+                  placeholder="Write the full article here. You can use line breaks for paragraphs."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" id="submit-btn">
+          <span class="btn-label">Submit News</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+        <p class="form-note">
+          By submitting, you confirm this content is accurate and permitted to be published on VAFeed.
+        </p>
+      </div>
+
+      <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> VAFeed</span>
+      <span class="footer-tag">Built for the virtual skies.</span>
+    </div>
+  </footer>
+
+  <script src="u_script.js"></script>
+</body>
+</html>

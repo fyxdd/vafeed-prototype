@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAFeed — Virtual Airline News</title>
+
+  <!-- FAVICON (SVG text) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0d0d'/%3E%3Ctext x='32' y='45' font-family='Inter, Arial, sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' letter-spacing='-1.5'%3EVAF%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0d0d'/%3E%3Ctext x='32' y='45' font-family='Inter, Arial, sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' letter-spacing='-1.5'%3EVAF%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">VA</span>
+        <span class="logo-text">Feed</span>
+      </a>
+      <nav class="nav">
+        <a href="#latest">Latest</a>
+        <a href="upload/upload.html">Upload News</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-kicker">Virtual Aviation Network</p>
+      <h1 class="hero-title">News for the<br />virtual skies.</h1>
+      <p class="hero-sub">
+        Real-time updates, route launches, fleet additions and events from virtual airlines around the world.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="featured container" id="latest">
+    <div id="featured-card" class="featured-card">
+      <div class="skeleton featured-skeleton"></div>
+    </div>
+  </section>
+
+  <!-- GRID BERITA -->
+  <section class="container">
+    <div class="section-head">
+      <h2>Latest Feed</h2>
+      <span class="section-line"></span>
+    </div>
+    <div id="news-grid" class="news-grid">
+      <!-- diisi oleh JS -->
+    </div>
+
+    <!-- PAGINATION -->
+    <div id="pagination" class="pagination"></div>
+
+    <div id="loading" class="loading">Loading feed…</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about container" id="about">
+    <h2>About VAFeed</h2>
+    <p>
+      VAFeed aggregates news from virtual airlines worldwide — from new route announcements
+      to fleet expansions and community events. All content is community-sourced via a public sheet.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> VAFeed</span>
+      <span class="footer-tag">Built for the virtual skies.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
